@@ -90,49 +90,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LogInWidget(),
         ),
         FFRoute(
-          name: CreateAccountWidget.routeName,
-          path: CreateAccountWidget.routePath,
-          builder: (context, params) => CreateAccountWidget(),
-        ),
-        FFRoute(
           name: HomePAgeWidget.routeName,
           path: HomePAgeWidget.routePath,
           builder: (context, params) => HomePAgeWidget(),
         ),
         FFRoute(
-          name: MenuWidget.routeName,
-          path: MenuWidget.routePath,
-          builder: (context, params) => MenuWidget(),
-        ),
-        FFRoute(
-          name: CalendarioWidget.routeName,
-          path: CalendarioWidget.routePath,
-          builder: (context, params) => CalendarioWidget(),
-        ),
-        FFRoute(
-          name: MenuCopyWidget.routeName,
-          path: MenuCopyWidget.routePath,
-          builder: (context, params) => MenuCopyWidget(),
-        ),
-        FFRoute(
-          name: AgendamentoDeSessesWidget.routeName,
-          path: AgendamentoDeSessesWidget.routePath,
-          builder: (context, params) => AgendamentoDeSessesWidget(),
-        ),
-        FFRoute(
           name: AgendarWidget.routeName,
           path: AgendarWidget.routePath,
           builder: (context, params) => AgendarWidget(),
-        ),
-        FFRoute(
-          name: FghjWidget.routeName,
-          path: FghjWidget.routePath,
-          builder: (context, params) => FghjWidget(),
-        ),
-        FFRoute(
-          name: CalendarWidget.routeName,
-          path: CalendarWidget.routePath,
-          builder: (context, params) => CalendarWidget(),
         ),
         FFRoute(
           name: PerfilWidget.routeName,
@@ -143,11 +108,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: EvoluoWidget.routeName,
           path: EvoluoWidget.routePath,
           builder: (context, params) => EvoluoWidget(),
-        ),
-        FFRoute(
-          name: RecomendaesWidget.routeName,
-          path: RecomendaesWidget.routePath,
-          builder: (context, params) => RecomendaesWidget(),
         ),
         FFRoute(
           name: RecomendacoesWidget.routeName,
@@ -165,9 +125,44 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CriarContaWidget(),
         ),
         FFRoute(
-          name: Menu2Widget.routeName,
-          path: Menu2Widget.routePath,
-          builder: (context, params) => Menu2Widget(),
+          name: AgendarProfWidget.routeName,
+          path: AgendarProfWidget.routePath,
+          builder: (context, params) => AgendarProfWidget(),
+        ),
+        FFRoute(
+          name: TreinosWidget.routeName,
+          path: TreinosWidget.routePath,
+          builder: (context, params) => TreinosWidget(),
+        ),
+        FFRoute(
+          name: TreinoPernasWidget.routeName,
+          path: TreinoPernasWidget.routePath,
+          builder: (context, params) => TreinoPernasWidget(),
+        ),
+        FFRoute(
+          name: TreinoPeitoBicepsWidget.routeName,
+          path: TreinoPeitoBicepsWidget.routePath,
+          builder: (context, params) => TreinoPeitoBicepsWidget(),
+        ),
+        FFRoute(
+          name: TreinoFuncionallWidget.routeName,
+          path: TreinoFuncionallWidget.routePath,
+          builder: (context, params) => TreinoFuncionallWidget(),
+        ),
+        FFRoute(
+          name: RecomendacoesCopyWidget.routeName,
+          path: RecomendacoesCopyWidget.routePath,
+          builder: (context, params) => RecomendacoesCopyWidget(),
+        ),
+        FFRoute(
+          name: TreinoCardioWidget.routeName,
+          path: TreinoCardioWidget.routePath,
+          builder: (context, params) => TreinoCardioWidget(),
+        ),
+        FFRoute(
+          name: TreinoYogaFlexibilidadeWidget.routeName,
+          path: TreinoYogaFlexibilidadeWidget.routePath,
+          builder: (context, params) => TreinoYogaFlexibilidadeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

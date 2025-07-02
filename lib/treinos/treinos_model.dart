@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'perfil_widget.dart' show PerfilWidget;
+import 'treinos_widget.dart' show TreinosWidget;
 import 'package:flutter/material.dart';
 
-class PerfilModel extends FlutterFlowModel<PerfilWidget> {
+class TreinosModel extends FlutterFlowModel<TreinosWidget> {
   @override
   void initState(BuildContext context) {}
 

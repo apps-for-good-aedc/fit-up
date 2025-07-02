@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'agendar_widget.dart' show AgendarWidget;
+import 'agendar_prof_widget.dart' show AgendarProfWidget;
 import 'package:flutter/material.dart';
 
-class AgendarModel extends FlutterFlowModel<AgendarWidget> {
+class AgendarProfModel extends FlutterFlowModel<AgendarProfWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for Calendar widget.

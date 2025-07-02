@@ -4,33 +4,33 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'agendar_model.dart';
-export 'agendar_model.dart';
+import 'agendar_prof_model.dart';
+export 'agendar_prof_model.dart';
 
 /// Ecrã de Agendamento de SessõesCalendário interativo.Lista de aulas
 /// disponíveis por dia.Filtro por tipo de atividade (ex.: treino funcional,
 /// alongamentos, mindfulness).Botão "Agendar".Diferenciaçã das aulas  atraves
 /// de cores no calendário a dizer se está cheia, com poucas vagas ou com
 /// muitas vagas O mês com 31 dias
-class AgendarWidget extends StatefulWidget {
-  const AgendarWidget({super.key});
+class AgendarProfWidget extends StatefulWidget {
+  const AgendarProfWidget({super.key});
 
-  static String routeName = 'Agendar';
-  static String routePath = '/agendar';
+  static String routeName = 'Agendar_prof';
+  static String routePath = '/agendarProf';
 
   @override
-  State<AgendarWidget> createState() => _AgendarWidgetState();
+  State<AgendarProfWidget> createState() => _AgendarProfWidgetState();
 }
 
-class _AgendarWidgetState extends State<AgendarWidget> {
-  late AgendarModel _model;
+class _AgendarProfWidgetState extends State<AgendarProfWidget> {
+  late AgendarProfModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AgendarModel());
+    _model = createModel(context, () => AgendarProfModel());
   }
 
   @override
@@ -77,7 +77,7 @@ class _AgendarWidgetState extends State<AgendarWidget> {
                         FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                   ),
                   color: Colors.white,
-                  fontSize: 22.0,
+                  fontSize: 25.0,
                   letterSpacing: 0.0,
                   fontWeight:
                       FlutterFlowTheme.of(context).headlineMedium.fontWeight,
@@ -281,6 +281,22 @@ class _AgendarWidgetState extends State<AgendarWidget> {
                     ].divide(SizedBox(width: 4.0)),
                   ),
                 ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[].divide(SizedBox(width: 8.0)),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[].divide(SizedBox(height: 12.0)),
+                  ),
+                ),
               ),
             ].divide(SizedBox(height: 16.0)).addToStart(SizedBox(height: 16.0)),
           ),

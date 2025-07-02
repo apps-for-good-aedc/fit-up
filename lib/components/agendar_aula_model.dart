@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'perfil_widget.dart' show PerfilWidget;
+import 'agendar_aula_widget.dart' show AgendarAulaWidget;
 import 'package:flutter/material.dart';
 
-class PerfilModel extends FlutterFlowModel<PerfilWidget> {
+class AgendarAulaModel extends FlutterFlowModel<AgendarAulaWidget> {
   @override
   void initState(BuildContext context) {}
 

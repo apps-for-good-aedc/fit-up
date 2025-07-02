@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'perfil_widget.dart' show PerfilWidget;
+import 'recomendacoes_widget.dart' show RecomendacoesWidget;
 import 'package:flutter/material.dart';
 
-class PerfilModel extends FlutterFlowModel<PerfilWidget> {
+class RecomendacoesModel extends FlutterFlowModel<RecomendacoesWidget> {
   @override
   void initState(BuildContext context) {}
 

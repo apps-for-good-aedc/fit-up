@@ -281,7 +281,7 @@ class _LogInWidgetState extends State<LogInWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
-                        GoRouter.of(context).prepareAuthEvent();
+                        GoRouter.of(context).prepareAuthEvent(true);
 
                         final user = await authManager.signInWithEmail(
                           context,
@@ -293,7 +293,10 @@ class _LogInWidgetState extends State<LogInWidget> {
                         }
 
                         context.pushNamedAuth(
-                            Menu1Widget.routeName, context.mounted);
+                          Menu1Widget.routeName,
+                          context.mounted,
+                          ignoreRedirect: true,
+                        );
                       },
                       text: 'Iniciar sessão',
                       options: FFButtonOptions(
@@ -391,7 +394,7 @@ class _LogInWidgetState extends State<LogInWidget> {
                               style: TextStyle(),
                             ),
                             TextSpan(
-                              text: 'Cria uma',
+                              text: ' Cria uma',
                               style: TextStyle(
                                 color: Color(0xFFF83B46),
                                 fontWeight: FontWeight.w600,

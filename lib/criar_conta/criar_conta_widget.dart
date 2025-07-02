@@ -45,6 +45,9 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
 
     _model.passTextController ??= TextEditingController();
     _model.passFocusNode ??= FocusNode();
+
+    _model.passwordTextController ??= TextEditingController();
+    _model.passwordFocusNode ??= FocusNode();
   }
 
   @override
@@ -147,7 +150,7 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                   controller:
                                       _model.radioButtonValueController ??=
                                           FormFieldController<String>(null),
-                                  optionHeight: 48.0,
+                                  optionHeight: 35.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -240,7 +243,8 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0xFFFF6F00),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -292,7 +296,7 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
-                                            lineHeight: 1.5,
+                                            lineHeight: 1.0,
                                           ),
                                       minLines: 1,
                                       cursorColor: Color(0xFFF83B46),
@@ -369,7 +373,8 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0xFFFF6F00),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -421,7 +426,7 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
-                                            lineHeight: 1.5,
+                                            lineHeight: 1.0,
                                           ),
                                       minLines: 1,
                                       keyboardType: TextInputType.emailAddress,
@@ -500,7 +505,8 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0xFFFF6F00),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -567,7 +573,7 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .fontStyle,
-                                            lineHeight: 1.5,
+                                            lineHeight: 1.0,
                                           ),
                                       cursorColor: Color(0xFFF83B46),
                                       validator: _model
@@ -575,70 +581,262 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                           .asValidator(context),
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(4.0),
+                                  Container(
+                                    width: double.infinity,
+                                    child: TextFormField(
+                                      controller: _model.passwordTextController,
+                                      focusNode: _model.passwordFocusNode,
+                                      autofocus: false,
+                                      autofillHints: [
+                                        AutofillHints.newPassword
+                                      ],
+                                      textInputAction: TextInputAction.done,
+                                      obscureText: !_model.passwordVisibility,
+                                      decoration: InputDecoration(
+                                        labelText: 'Confirme palavra-passe',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
+                                                fontWeight: FontWeight.w500,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color: Color(0xFFF83B46),
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                              lineHeight: 1.5,
                                             ),
-                                          ),
-                                          unselectedWidgetColor:
-                                              Color(0xFF757575),
-                                        ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue ??= false,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue = newValue!);
-                                          },
-                                          side: (Color(0xFF757575) != null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: Color(0xFF757575),
-                                                )
-                                              : null,
-                                          activeColor: Color(0xFFF83B46),
-                                          checkColor: Color(0xFFF5F5F5),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: Text(
-                                          'Aceito os termos e condições de utilização',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodySmall
-                                                          .fontStyle,
-                                                ),
-                                                color: Color(0xFF757575),
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
+                                        hintText:
+                                            'Comfirme a sua palavra-passe',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.inter(
                                                 fontWeight: FontWeight.normal,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodySmall
+                                                        .labelMedium
                                                         .fontStyle,
-                                                lineHeight: 1.4,
                                               ),
+                                              color: Color(0xFF757575),
+                                              fontSize: 16.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                              lineHeight: 1.5,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0xFFF83B46),
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Colors.red,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                16.0, 18.0, 16.0, 18.0),
+                                        suffixIcon: InkWell(
+                                          onTap: () => safeSetState(
+                                            () => _model.passwordVisibility =
+                                                !_model.passwordVisibility,
+                                          ),
+                                          focusNode:
+                                              FocusNode(skipTraversal: true),
+                                          child: Icon(
+                                            _model.passwordVisibility
+                                                ? Icons.visibility_outlined
+                                                : Icons.visibility_off_outlined,
+                                            color: Color(0xFF757575),
+                                            size: 20.0,
+                                          ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 8.0)),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.normal,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF212121),
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                            lineHeight: 1.0,
+                                          ),
+                                      cursorColor: Color(0xFFF83B46),
+                                      validator: _model
+                                          .passwordTextControllerValidator
+                                          .asValidator(context),
+                                    ),
                                   ),
                                 ].divide(SizedBox(height: 16.0)),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Aceito os termos e condições de utilização',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.normal,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFF757575),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .fontStyle,
+                                      lineHeight: 1.4,
+                                    ),
+                              ),
+                            ),
+                            FFButtonWidget(
+                              onPressed: () async {
+                                GoRouter.of(context).prepareAuthEvent(true);
+                                if (_model.passTextController.text !=
+                                    _model.passwordTextController.text) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Passwords don\'t match!',
+                                      ),
+                                    ),
+                                  );
+                                  return;
+                                }
+
+                                final user =
+                                    await authManager.createAccountWithEmail(
+                                  context,
+                                  _model.emailTextController.text,
+                                  _model.passTextController.text,
+                                );
+                                if (user == null) {
+                                  return;
+                                }
+
+                                await Users1Record.collection
+                                    .doc(user.uid)
+                                    .update(createUsers1RecordData(
+                                      displayName:
+                                          _model.displayNameTextController.text,
+                                    ));
+
+                                context.goNamedAuth(
+                                  Menu1Widget.routeName,
+                                  context.mounted,
+                                  ignoreRedirect: true,
+                                );
+                              },
+                              text: 'Criar Conta',
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 56.0,
+                                padding: EdgeInsets.all(0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: Color(0xFFF83B46),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFFF5F5F5),
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                            ),
+                            Theme(
+                              data: ThemeData(
+                                checkboxTheme: CheckboxThemeData(
+                                  visualDensity: VisualDensity.compact,
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ),
+                                unselectedWidgetColor: Color(0xFF757575),
+                              ),
+                              child: Checkbox(
+                                value: _model.checkboxValue ??= false,
+                                onChanged: (newValue) async {
+                                  safeSetState(
+                                      () => _model.checkboxValue = newValue!);
+                                },
+                                side: (Color(0xFF757575) != null)
+                                    ? BorderSide(
+                                        width: 2,
+                                        color: Color(0xFF757575),
+                                      )
+                                    : null,
+                                activeColor: Color(0xFFF83B46),
+                                checkColor: Color(0xFFF5F5F5),
                               ),
                             ),
                           ].divide(SizedBox(height: 24.0)),
@@ -648,63 +846,6 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        FFButtonWidget(
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-
-                            final user =
-                                await authManager.createAccountWithEmail(
-                              context,
-                              _model.emailTextController.text,
-                              _model.passTextController.text,
-                            );
-                            if (user == null) {
-                              return;
-                            }
-
-                            await Users1Record.collection
-                                .doc(user.uid)
-                                .update(createUsers1RecordData(
-                                  displayName:
-                                      _model.displayNameTextController.text,
-                                ));
-
-                            context.goNamedAuth(
-                                Menu1Widget.routeName, context.mounted);
-                          },
-                          text: 'Criar Conta',
-                          options: FFButtonOptions(
-                            width: double.infinity,
-                            height: 56.0,
-                            padding: EdgeInsets.all(0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFFF83B46),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  font: GoogleFonts.interTight(
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  color: Color(0xFFF5F5F5),
-                                  fontSize: 16.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
-                            elevation: 0.0,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                        ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -729,25 +870,34 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                         .fontStyle,
                                   ),
                             ),
-                            Text(
-                              'Iniciar sessão',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(LogInWidget.routeName);
+                              },
+                              child: Text(
+                                'Iniciar sessão',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFFF83B46),
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFFF83B46),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              ),
                             ),
                           ].divide(SizedBox(width: 4.0)),
                         ),

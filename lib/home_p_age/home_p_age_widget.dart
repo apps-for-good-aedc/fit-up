@@ -61,8 +61,8 @@ class _HomePAgeWidgetState extends State<HomePAgeWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 200.0,
-                        height: 200.0,
+                        width: 150.0,
+                        height: 150.0,
                         clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -175,7 +175,7 @@ class _HomePAgeWidgetState extends State<HomePAgeWidget> {
                         text: 'Iniciar Sessão',
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 56.0,
+                          height: 49.0,
                           padding: EdgeInsets.all(8.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
@@ -211,7 +211,7 @@ class _HomePAgeWidgetState extends State<HomePAgeWidget> {
                         text: 'Criar Conta',
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 56.0,
+                          height: 49.0,
                           padding: EdgeInsets.all(8.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),

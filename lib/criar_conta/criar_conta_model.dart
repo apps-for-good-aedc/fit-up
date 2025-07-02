@@ -23,12 +23,18 @@ class CriarContaModel extends FlutterFlowModel<CriarContaWidget> {
   TextEditingController? passTextController;
   late bool passVisibility;
   String? Function(BuildContext, String?)? passTextControllerValidator;
+  // State field(s) for password widget.
+  FocusNode? passwordFocusNode;
+  TextEditingController? passwordTextController;
+  late bool passwordVisibility;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 
   @override
   void initState(BuildContext context) {
     passVisibility = false;
+    passwordVisibility = false;
   }
 
   @override
@@ -41,6 +47,9 @@ class CriarContaModel extends FlutterFlowModel<CriarContaWidget> {
 
     passFocusNode?.dispose();
     passTextController?.dispose();
+
+    passwordFocusNode?.dispose();
+    passwordTextController?.dispose();
   }
 
   /// Additional helper methods.
