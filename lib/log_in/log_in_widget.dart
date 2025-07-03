@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -418,6 +419,22 @@ class _LogInWidgetState extends State<LogInWidget> {
                                         .fontStyle,
                                   ),
                         ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.86, 1.02),
+                      child: FlutterFlowIconButton(
+                        borderRadius: 8.0,
+                        buttonSize: 40.0,
+                        fillColor: Color(0xFFFAF6F6),
+                        icon: Icon(
+                          Icons.start,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 24.0,
+                        ),
+                        onPressed: () async {
+                          context.pushNamed(Menu1Widget.routeName);
+                        },
                       ),
                     ),
                   ].divide(SizedBox(height: 32.0)),

@@ -1,4 +1,4 @@
-# Fit Up
+# FitUp2
 
 A new Flutter project.
 

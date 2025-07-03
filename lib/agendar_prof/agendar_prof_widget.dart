@@ -282,22 +282,6 @@ class _AgendarProfWidgetState extends State<AgendarProfWidget> {
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[].divide(SizedBox(width: 8.0)),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[].divide(SizedBox(height: 12.0)),
-                  ),
-                ),
-              ),
             ].divide(SizedBox(height: 16.0)).addToStart(SizedBox(height: 16.0)),
           ),
         ),

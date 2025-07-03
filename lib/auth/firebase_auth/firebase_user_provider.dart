@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class FitUpFirebaseUser extends BaseAuthUser {
-  FitUpFirebaseUser(this.user);
+class FitUp2FirebaseUser extends BaseAuthUser {
+  FitUp2FirebaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -58,17 +58,17 @@ class FitUpFirebaseUser extends BaseAuthUser {
 
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
-  static BaseAuthUser fromFirebaseUser(User? user) => FitUpFirebaseUser(user);
+  static BaseAuthUser fromFirebaseUser(User? user) => FitUp2FirebaseUser(user);
 }
 
-Stream<BaseAuthUser> fitUpFirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> fitUp2FirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = FitUpFirebaseUser(user);
+        currentUser = FitUp2FirebaseUser(user);
         return currentUser!;
       },
     );

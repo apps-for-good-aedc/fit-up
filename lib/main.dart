@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = fitUpFirebaseUserStream()
+    userStream = fitUp2FirebaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Fit Up',
+      title: 'FitUp2',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

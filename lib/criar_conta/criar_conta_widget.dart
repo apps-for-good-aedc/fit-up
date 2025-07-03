@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -615,7 +616,7 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                               lineHeight: 1.5,
                                             ),
                                         hintText:
-                                            'Comfirme a sua palavra-passe',
+                                            'Confirme a sua palavra-passe',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -717,28 +718,64 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                 ].divide(SizedBox(height: 16.0)),
                               ),
                             ),
-                            Expanded(
-                              child: Text(
-                                'Aceito os termos e condições de utilização',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodySmall
-                                    .override(
-                                      font: GoogleFonts.inter(
-                                        fontWeight: FontWeight.normal,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .fontStyle,
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Theme(
+                                  data: ThemeData(
+                                    checkboxTheme: CheckboxThemeData(
+                                      visualDensity: VisualDensity.compact,
+                                      materialTapTargetSize:
+                                          MaterialTapTargetSize.shrinkWrap,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
                                       ),
-                                      color: Color(0xFF757575),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.normal,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                      lineHeight: 1.4,
                                     ),
-                              ),
+                                    unselectedWidgetColor: Color(0xFF757575),
+                                  ),
+                                  child: Checkbox(
+                                    value: _model.checkboxValue ??= false,
+                                    onChanged: (newValue) async {
+                                      safeSetState(() =>
+                                          _model.checkboxValue = newValue!);
+                                    },
+                                    side: (Color(0xFF757575) != null)
+                                        ? BorderSide(
+                                            width: 2,
+                                            color: Color(0xFF757575),
+                                          )
+                                        : null,
+                                    activeColor: Color(0xFFF83B46),
+                                    checkColor: Color(0xFFF5F5F5),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    'Aceito os termos e condições de utilização',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          font: GoogleFonts.inter(
+                                            fontWeight: FontWeight.normal,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodySmall
+                                                    .fontStyle,
+                                          ),
+                                          color: Color(0xFF757575),
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.normal,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontStyle,
+                                          lineHeight: 1.4,
+                                        ),
+                                  ),
+                                ),
+                              ],
                             ),
                             FFButtonWidget(
                               onPressed: () async {
@@ -811,34 +848,6 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                             ),
-                            Theme(
-                              data: ThemeData(
-                                checkboxTheme: CheckboxThemeData(
-                                  visualDensity: VisualDensity.compact,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.shrinkWrap,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4.0),
-                                  ),
-                                ),
-                                unselectedWidgetColor: Color(0xFF757575),
-                              ),
-                              child: Checkbox(
-                                value: _model.checkboxValue ??= false,
-                                onChanged: (newValue) async {
-                                  safeSetState(
-                                      () => _model.checkboxValue = newValue!);
-                                },
-                                side: (Color(0xFF757575) != null)
-                                    ? BorderSide(
-                                        width: 2,
-                                        color: Color(0xFF757575),
-                                      )
-                                    : null,
-                                activeColor: Color(0xFFF83B46),
-                                checkColor: Color(0xFFF5F5F5),
-                              ),
-                            ),
                           ].divide(SizedBox(height: 24.0)),
                         ),
                       ].divide(SizedBox(height: 32.0)),
@@ -904,6 +913,22 @@ class _CriarContaWidgetState extends State<CriarContaWidget> {
                       ].divide(SizedBox(height: 16.0)),
                     ),
                   ],
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.86, 1.02),
+                child: FlutterFlowIconButton(
+                  borderRadius: 8.0,
+                  buttonSize: 40.0,
+                  fillColor: Color(0xFFFAF6F6),
+                  icon: Icon(
+                    Icons.start,
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    size: 24.0,
+                  ),
+                  onPressed: () async {
+                    context.pushNamed(Menu1Widget.routeName);
+                  },
                 ),
               ),
             ],

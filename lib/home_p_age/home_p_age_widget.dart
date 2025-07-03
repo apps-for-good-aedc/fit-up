@@ -101,7 +101,7 @@ class _HomePAgeWidgetState extends State<HomePAgeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: Text(
-                          'FitUp',
+                          'Fit Up',
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
                               .displayLarge
